@@ -1,0 +1,158 @@
+.game {
+  width: 600px;
+  height: 200px;
+  border: 2px solid black;
+  margin: auto;
+  background-image: url("img/background.png");
+  background-position: 0 0;
+  position: relative;
+  overflow: hidden;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -1000px 0;
+  }
+}
+
+#boxman {
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  background-size: 50px 50px;
+  background-image: url(img/run/r_000.png);
+  position: relative;
+  top: 120px;
+  animation: boxman infinite 0.7s;
+}
+
+@keyframes boxman {
+  0% {
+    background-image: url("img/run/r_000.png");
+  }
+  5% {
+    background-image: url("img/run/r_001.png");
+  }
+  10% {
+    background-image: url("img/run/r_002.png");
+  }
+  15% {
+    background-image: url("img/run/r_003.png");
+  }
+  20% {
+    background-image: url("img/run/r_004.png");
+  }
+  25% {
+    background-image: url("img/run/r_005.png");
+  }
+  30% {
+    background-image: url("img/run/r_006.png");
+  }
+  35% {
+    background-image: url("img/run/r_007.png");
+  }
+  40% {
+    background-image: url("img/run/r_008.png");
+  }
+  45% {
+    background-image: url("img/run/r_009.png");
+  }
+  50% {
+    background-image: url("img/run/r_010.png");
+  }
+  55% {
+    background-image: url("img/run/r_011.png");
+  }
+  60% {
+    background-image: url("img/run/r_012.png");
+  }
+  65% {
+    background-image: url("img/run/r_013.png");
+  }
+  70% {
+    background-image: url("img/run/r_014.png");
+  }
+  75% {
+    background-image: url("img/run/r_015.png");
+  }
+  80% {
+    background-image: url("img/run/r_016.png");
+  }
+  85% {
+    background-image: url("img/run/r_017.png");
+  }
+  90% {
+    background-image: url("img/run/r_018.png");
+  }
+  95% {
+    background-image: url("img/run/r_019.png");
+  }
+  97.5% {
+    background-image: url("img/run/r_020.png");
+  }
+
+  100% {
+    background-image: url("img/run/r_000.png");
+  }
+}
+.jump {
+  animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+    background-image: url("img/jump/j_000.png");
+  }
+  30% {
+    top: 120px;
+    background-image: url("img/jump/j_001.png");
+  }
+  50% {
+    top: 70px;
+    background-image: url("img/jump/j_002.png");
+  }
+  80% {
+    top: 120px;
+    background-image: url("img/jump/j_003.png");
+  }
+  100% {
+    top: 150px;
+    background-image: url("img/jump/j_000.png");
+  }
+}
+
+#trash {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 138px;
+  left: 560px;
+  z-index: 1;
+  background-image: url("img/IMG_7918.PNG");
+  background-size: 36px 36px;
+  animation: block 2.2s infinite linear, trash 1.2s linear infinite;
+}
+
+@keyframes block {
+  0% {
+    left: 560px;
+  }
+  100% {
+    left: -30px;
+  }
+}
+
+@keyframes trash {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
