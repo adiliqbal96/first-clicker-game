@@ -23,12 +23,26 @@
 #boxman {
   width: 50px;
   height: 50px;
-  z-index: 1;
   background-size: 50px 50px;
   background-image: url(img/run/r_000.png);
-  position: relative;
+  position: absolute;
   top: 120px;
   animation: boxman infinite 0.7s;
+}
+
+#lives {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#lives img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+#boxman.jump {
+  animation-name: jump;
 }
 
 @keyframes boxman {
@@ -100,43 +114,38 @@
     background-image: url("img/run/r_000.png");
   }
 }
-.jump {
-  animation: jump 0.5s linear;
-}
-
 @keyframes jump {
   0% {
-    top: 150px;
+    transform: translateY(0); /* Start with no vertical displacement */
     background-image: url("img/jump/j_000.png");
   }
-  30% {
-    top: 120px;
+  25% {
+    transform: translateY(-40px); /* Move Boxman up in the air */
     background-image: url("img/jump/j_001.png");
   }
   50% {
-    top: 70px;
+    transform: translateY(-60px); /* Boxman reaches the peak of the jump */
     background-image: url("img/jump/j_002.png");
   }
-  80% {
-    top: 120px;
-    background-image: url("img/jump/j_003.png");
+  75% {
+    transform: translateY(-40px); /* Boxman starts to descend */
+    background-image: url("img/jump/j_010.png");
   }
   100% {
-    top: 150px;
-    background-image: url("img/jump/j_000.png");
+    transform: translateY(0); /* Return Boxman to the ground */
+    background-image: url("img/jump/j_011.png");
   }
 }
 
 #trash {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  top: 138px;
+  top: 145px;
   left: 560px;
-  z-index: 1;
   background-image: url("img/IMG_7918.PNG");
-  background-size: 36px 36px;
-  animation: block 2.2s infinite linear, trash 1.2s linear infinite;
+  background-size: 30px 30px;
+  animation: block 2.1s infinite linear, trash 1.2s linear infinite;
 }
 
 @keyframes block {
@@ -155,4 +164,140 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#ko {
+  background-image: url("img/KO/ko_000.png");
+  animation-name: ko;
+}
+
+@keyframes ko {
+  0% {
+    background-image: url("img/KO/ko_000.png");
+  }
+  2.5% {
+    background-image: url("img/KO/ko_001.png");
+  }
+  5% {
+    background-image: url("img/KO/ko_002.png");
+  }
+  10% {
+    background-image: url("img/KO/ko_003.png");
+  }
+  15% {
+    background-image: url("img/KO/ko_004.png");
+  }
+  20% {
+    background-image: url("img/KO/ko_005.png");
+  }
+  25% {
+    background-image: url("img/KO/ko_006.png");
+  }
+  30% {
+    background-image: url("img/KO/ko_007.png");
+  }
+  35% {
+    background-image: url("img/KO/ko_008.png");
+  }
+  40% {
+    background-image: url("img/KO/ko_009.png");
+  }
+  45% {
+    background-image: url("img/KO/ko_010.png");
+  }
+  55% {
+    background-image: url("img/KO/ko_011.png");
+  }
+  60% {
+    background-image: url("img/KO/ko_012.png");
+  }
+  65% {
+    background-image: url("img/KO/ko_013.png");
+  }
+  70% {
+    background-image: url("img/KO/ko_014.png");
+  }
+  75% {
+    background-image: url("img/KO/ko_015.png");
+  }
+  80% {
+    background-image: url("img/KO/ko_016.png");
+  }
+  85% {
+    background-image: url("img/KO/ko_017.png");
+  }
+  90% {
+    background-image: url("img/KO/ko_018.png");
+  }
+  95% {
+    background-image: url("img/KO/ko_019.png");
+  }
+  100% {
+    background-image: url("img/KO/ko_020.png");
+  }
+}
+
+#coin {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  background-size: contain;
+  top: 140px;
+  left: 550px;
+  animation: coin-scroll 2s linear infinite, spin 5s infinite;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes coin-scroll {
+  0% {
+    left: 550px;
+  }
+  100% {
+    left: -50px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    background-image: url("img/coinss/coin1.png");
+  }
+  10% {
+    background-image: url("img/coinss/coin2.png");
+  }
+  20% {
+    background-image: url("img/coinss/coin3.png");
+  }
+  30% {
+    background-image: url("img/coinss/coin4.png");
+  }
+  40% {
+    background-image: url("img/coinss/coin5.png");
+  }
+  50% {
+    background-image: url("img/coinss/coin6.png");
+  }
+  60% {
+    background-image: url("img/coinss/coin7.png");
+  }
+  70% {
+    background-image: url("img/coinss/coin8.png");
+  }
+  80% {
+    background-image: url("img/coinss/coin9.png");
+  }
+  100% {
+    background-image: url("img/coinss/coin10.png");
+  }
+}
+
+#game-over {
+  background-image: url("img/phonto1.png");
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
